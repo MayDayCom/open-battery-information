@@ -265,9 +265,9 @@ class ModuleApplication(tk.Frame):
                 v_cell4 = int.from_bytes(response[10:12], byteorder='little') / 1000
                 v_cell5 = int.from_bytes(response[12:14], byteorder='little') / 1000
                 voltages = [v_cell1,v_cell2,v_cell3,v_cell4,v_cell5]
-                v_diff = round(max(voltages) - min(voltages), 2)
-                t_cell = int.from_bytes(response[16:18], byteorder='little') / 100
-                t_mosfet = int.from_bytes(response[18:20], byteorder='little') / 100
+                v_diff = round(max(voltages) - min(voltages), 3)
+                t_cell = int.from_bytes(response[16:18], byteorder='little') / 1000
+                t_mosfet = int.from_bytes(response[18:20], byteorder='little') / 1000
 
             battery_data = {
                 "Pack Voltage": v_pack,
